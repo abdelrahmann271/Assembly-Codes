@@ -1,0 +1,25 @@
+.234567890123456789
+PROB1    START   1000
+         LDX    #0
+         LDS    #67
+         LDA    #0
+LOOP     LDCH    STR,X
+         COMPR   A,S
+         JEQ     DO
+         JLT     DOF
+         JGT     DOF
+DO       JSUB    DOE
+DOF      RMO     X,A
+         ADD    #1
+         RMO     A,X
+         LDA    #5
+         COMPR   X,A
+         JLT     LOOP
+         RMO     T,A
+         JEQ     EXIT
+DOE      LDA    #STR
+         ADDR    X,A
+         J       EXIT
+STR      BYTE    C'ABCDE'
+CHR      BYTE    C'C'
+EXIT     END     PROB1

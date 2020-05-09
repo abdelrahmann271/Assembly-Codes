@@ -1,0 +1,12 @@
+. this is a comment
+PROB1    START   1000
+         LDA     ALPHA
+         LDS    #0
+         LDX    #1
+LOOP     ADDR    X,S 
+         TIXR    X,A
+         COMPR   X,A
+         JLT     LOOP
+         JEQ     LOOP
+ALPHA    WORD    7
+         END     PROB1

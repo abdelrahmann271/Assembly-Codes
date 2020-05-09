@@ -1,0 +1,15 @@
+.234567890123456789
+PROB1    START   1000
+         LDS    #1
+         LDT    #2
+         LDA    #0
+AGAIN    TD      INDEV
+         JEQ     AGAIN
+         RD      INDEV
+         RMO     A,B
+         ADDR    S,B
+         MULR    B,A
+         DIVR    T,A
+         RMO     A,S
+INDEV    BYTE    X'F3'
+         END     PROB1

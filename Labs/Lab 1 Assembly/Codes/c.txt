@@ -1,0 +1,16 @@
+.234567890123456789
+PROB1    START   1000
+         LDX    #0   
+LOOP     LDCH    BLANK  
+         LDB     STR,X
+         STCH    STR,X
+         LDB     STR,X   
+         RMO     X,A
+         ADD    #1   
+         RMO     A,X
+         COMP    TEST
+         JLT     LOOP
+TEST     WORD    100
+STR      RESB    100
+BLANK    BYTE    C' '
+         END     PROB1

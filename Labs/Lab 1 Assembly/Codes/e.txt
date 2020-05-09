@@ -1,0 +1,18 @@
+.234567890123456789
+PROB1    START   1000
+         LDX    #0
+         LDA    #0
+LOOP     LDS    #4 
+AGAIN    TD      INDEV
+         JEQ     AGAIN
+         RD      INDEV
+         COMPR   A,S
+         JGT     ZWD
+         JEQ     KHAL
+ZWD      RMO     X,A
+         ADD    #1
+         RMO     A,X
+         JGT     LOOP
+KHAL     RMO     X,A
+INDEV    BYTE    X'F3'
+         END     PROB1

@@ -1,0 +1,8 @@
+PROB1    START   1000
+         LDA     BETA
+         DIV     GAMMA
+         STA     ALPHA
+BETA     WORD    10
+GAMMA    WORD    2
+ALPHA    RESW    1
+         END     PROB1

@@ -1,0 +1,15 @@
+.234567890123456789
+PROB1    START   1000
+         LDX    #0
+         LDA    #0
+LOOP     LDS     ARRAY,X
+         LDB    #0
+         STB     ARRAY,X
+         LDS     ARRAY,X
+         ADD    #3
+         RMO     A,X
+         COMP    TEST
+         JLT     LOOP
+ARRAY    RESW    100
+TEST     WORD    300
+         END     PROB1

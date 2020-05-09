@@ -1,0 +1,12 @@
+PROB1    START   1000
+         LDA     BETA
+         MUL    #4
+         STA     ALPHA
+         LDA     GAMMA
+         MUL    #3
+         ADD     ALPHA
+         STA     ALPHA
+BETA     WORD    2
+GAMMA    WORD    3
+ALPHA    RESW    1
+         END     PROB1

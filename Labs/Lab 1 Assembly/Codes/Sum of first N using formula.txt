@@ -1,0 +1,11 @@
+. this is a comment
+.234567890123456789
+PROB1    START   1000
+         LDA     ALPHA
+         LDS     ALPHA
+         ADD    #1
+         MULR    A,S
+         LDT    #2
+         DIV     T,S
+ALPHA    WORD    7
+         END     PROB1

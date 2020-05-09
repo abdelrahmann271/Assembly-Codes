@@ -1,0 +1,25 @@
+.234567890123456789
+PROB1    START   1000
+         LDA    #0
+LOOP1    LDS    #4
+AGAIN1   TD      INDEV
+         JEQ     AGAIN1
+         RD      INDEV
+         COMPR   A,S
+         JEQ     EXIT
+         JLT     EXIT
+         JSUB    CONV
+         JSUB    WRITE
+         J       AGAIN1
+CONV     COMP   #90
+         JGT     DO
+         RSUB
+DO       SUB    #32
+         RSUB
+WRITE    TD      OUTDEV
+         JEQ     WRITE
+         WD      OUTDEV
+         RSUB   
+INDEV    BYTE    X'F3'
+OUTDEV   BYTE    X'05'
+EXIT     END     PROB1
